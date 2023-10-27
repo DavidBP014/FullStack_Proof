@@ -8,9 +8,7 @@ app.controller('RegistrationController', ['$scope', '$http', function($scope, $h
                 .then(function(response) {
                     // Manejar la respuesta exitosa
                 })
-                .catch(function(error) {
-                    // Manejar errores
-                });
+                .catch(function(error) {});
         }
     };
 }]);

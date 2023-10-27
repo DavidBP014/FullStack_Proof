@@ -1,6 +1,5 @@
 .container {
     background-color: #e0e5ec;
-    /* Color de fondo, puedes ajustarlo según tus necesidades */
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
@@ -34,12 +33,10 @@
 
 .input-group input:focus {
     border-bottom-color: #673ab7;
-    /* Color cuando se selecciona el input */
 }
 
 .sign-up-btn {
     background-color: #673ab7;
-    /* Color del botón, ajusta según tus necesidades */
     color: #fff;
     border: none;
     padding: 12px 20px;
@@ -63,7 +60,6 @@
 
 ---------------------------------------------------- .container {
     background-color: #e0e5ec;
-    /* Color de fondo, puedes ajustarlo según tus necesidades */
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
@@ -97,12 +93,10 @@
 
 .input-group input:focus {
     border-bottom-color: #673ab7;
-    /* Color cuando se selecciona el input */
 }
 
 .sign-in-btn {
     background-color: #673ab7;
-    /* Color del botón, ajusta según tus necesidades */
     color: #fff;
     border: none;
     padding: 12px 20px;
@@ -371,26 +365,22 @@ header h1 {
     align-items: center;
     justify-content: center;
     height: 200px;
-    /* Puedes ajustar esta altura según tus necesidades */
     text-align: center;
 }
 
 .no-results img {
     max-width: 100px;
-    /* Puedes ajustar esta anchura según tus necesidades */
     margin-bottom: 20px;
 }
 
 ----------------------------- .publications {
     width: 80%;
-    /* o según prefieras */
     margin: auto;
     padding: 20px;
 }
 
 .post-card {
     background-color: #f5f5f5;
-    /* o cualquier otro color que prefieras */
     padding: 15px;
     margin: 10px 0;
     border-radius: 10px;
@@ -398,7 +388,6 @@ header h1 {
 
 .highlighted {
     background-color: #FFEB3B;
-    /* Amarillo para resaltar, pero puedes cambiarlo */
 }
 
 .paginator {
