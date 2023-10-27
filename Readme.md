@@ -1,10 +1,5 @@
-¡Claro! A continuación, te proporcionaré un `README.md` básico y bien estructurado para tu proyecto de medios sociales llamado "Easy Media". Puedes utilizarlo como punto de partida y adaptarlo según las necesidades específicas de tu proyecto:
-
----
 
 # Easy Media
-
-![Logo](easy_media_logo)
 
 **Easy Media** es una plataforma de medios sociales donde compartir es fácil. Nuestro objetivo es ofrecer una interfaz sencilla y directa para que los usuarios publiquen y compartan contenido con sus amigos y familiares.
 
@@ -14,8 +9,6 @@
 - [Tecnologías Utilizadas](#tecnologías-utilizadas)
 - [Instalación](#instalación)
 - [Uso](#uso)
-- [Contribución](#contribución)
-- [Licencia](#licencia)
 - [Contacto](#contacto)
 
 ## Funcionalidades
