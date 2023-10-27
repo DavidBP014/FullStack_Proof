@@ -1,0 +1,292 @@
+<!-- registration.html -->
+<div ng-controller="RegistrationController">
+    <form name="registrationForm" ng-submit="register(registrationForm.$valid)" novalidate>
+        <!-- Nombre de usuario -->
+        <div>
+            <label>Nombre de usuario:</label>
+            <input type="text" name="username" ng-model="user.username" required ng-pattern="/^[a-zA-Z\s]*$/">
+            <span ng-show="registrationForm.username.$error.required && registrationForm.username.$dirty">Este campo es requerido</span>
+            <span ng-show="registrationForm.username.$error.pattern">Por favor ingresa un nombre válido</span>
+        </div>
+
+        <!-- Email -->
+        <div>
+            <label>Email:</label>
+            <input type="email" name="email" ng-model="user.email" required>
+            <span ng-show="registrationForm.email.$error.required && registrationForm.email.$dirty">Este campo es requerido</span>
+            <span ng-show="registrationForm.email.$error.email">Por favor ingresa un email válido</span>
+        </div>
+
+        <!-- Contraseña -->
+        <div>
+            <label>Contraseña:</label>
+            <input type="password" name="password" ng-model="user.password" required minlength="8">
+            <span ng-show="registrationForm.password.$error.required && registrationForm.password.$dirty">Este campo es requerido</span>
+            <span ng-show="registrationForm.password.$error.minlength">La contraseña debe tener mínimo 8 caracteres</span>
+        </div>
+
+        <!-- Confirmación de contraseña -->
+        <div>
+            <label>Confirmar Contraseña:</label>
+            <input type="password" name="confirmPassword" ng-model="user.confirmPassword" required match-password="user.password">
+            <span ng-show="registrationForm.confirmPassword.$error.required && registrationForm.confirmPassword.$dirty">Este campo es requerido</span>
+            <span ng-show="registrationForm.confirmPassword.$error.noMatch && registrationForm.confirmPassword.$dirty">Las contraseñas no coinciden</span>
+        </div>
+
+        <button type="submit" ng-disabled="registrationForm.$invalid">Registrar</button>
+    </form>
+</div>
+
+----------------------------------------
+<div class="container" ng-controller="RegistrationController">
+    <div class="logo">
+        <img src="path_to_your_image.png" alt="Easy Media Logo">
+        <h1>Easy Media</h1>
+        <p>Now, share is easy</p>
+    </div>
+
+    <form name="registrationForm" ng-submit="register(registrationForm.$valid)" novalidate class="registration-form">
+        <!-- Full Name -->
+        <div class="input-group">
+            <label>Full Name</label>
+            <input type="text" name="fullName" ng-model="user.fullName" required>
+            <!-- Add your error messages here -->
+        </div>
+
+        <!-- Email -->
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" name="email" ng-model="user.email" required>
+            <!-- Add your error messages here -->
+        </div>
+
+        <!-- Password -->
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" name="password" ng-model="user.password" required>
+            <!-- Add your error messages here -->
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="input-group">
+            <label>Confirm Password</label>
+            <input type="password" name="confirmPassword" ng-model="user.confirmPassword" required>
+            <!-- Add your error messages here -->
+        </div>
+
+        <button type="submit" class="sign-up-btn" ng-disabled="registrationForm.$invalid">SIGN UP</button>
+
+        <p class="login-text">Already have an account? <a href="#!login">Login</a></p>
+    </form>
+</div>
+
+----------------------------------------------
+<div class="container" ng-controller="LoginController">
+    <div class="logo">
+        <img src="path_to_your_image.png" alt="Easy Media Logo">
+        <h1>Easy Media</h1>
+        <p>Now, share is easy</p>
+    </div>
+
+    <form name="loginForm" ng-submit="login(loginForm.$valid)" novalidate class="login-form">
+        <!-- Email -->
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" name="email" ng-model="user.email" required>
+            <!-- Add your error messages here -->
+            <p class="error-message" ng-if="loginForm.email.$error.required && loginForm.email.$dirty">Este campo es requerido</p>
+            <p class="error-message" ng-if="loginForm.email.$error.email && loginForm.email.$dirty">Por favor ingresa un email válido</p>
+        </div>
+
+        <!-- Password -->
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" name="password" ng-model="user.password" required minlength="8">
+            <!-- Add your error messages here -->
+            <p class="error-message" ng-if="loginForm.password.$error.required && loginForm.password.$dirty">Este campo es requerido</p>
+            <p class="error-message" ng-if="loginForm.password.$error.minlength && loginForm.password.$dirty">La contraseña debe tener mínimo 8 caracteres</p>
+        </div>
+
+        <button type="submit" class="sign-in-btn" ng-disabled="loginForm.$invalid">SIGN IN</button>
+        <p class="error-message" ng-if="authenticationError">Invalid email or password</p>
+
+        <p class="signup-text">Don't have an account? <a href="#!register">Sign Up</a></p>
+    </form>
+</div>
+
+----------------------------------------------
+<div class="app-section">
+    <header>
+        <h1>Easy Media</h1>
+        <div class="menu">
+            <span class="username">Camilo Cifuentes</span>
+            <ul>
+                <li><a href="/create-post">Create Publication</a></li>
+                <li><a href="/my-posts">My Publications</a></li>
+                <li><a href="/all-posts">See All Publications</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="search">
+            <label>Words to Search?</label>
+            <input type="text" placeholder="post">
+            <label>Date Select</label>
+            <select>
+                <option>Select a date</option>
+                <!-- ... more date options ... -->
+            </select>
+        </div>
+        <div class="posts">
+            <!-- Example of a post -->
+            <div class="post">
+                <h2>Your post title</h2>
+                <p>Create message for share with your friends.</p>
+                <p class="post-date-author">11:25 am 20/10/23 - Daniela Correa</p>
+            </div>
+            <!-- ... more posts ... -->
+        </div>
+        <div class="pagination">
+            <button>&lt;&lt;</button>
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <button>&gt;&gt;</button>
+        </div>
+    </main>
+</div>
+----------------------------------------------
+
+<div class="create-post-section">
+    <header>
+        <h1>Easy Media</h1>
+    </header>
+    <div class="create-message">
+        <label>Title messages</label>
+        <input type="text" id="title-input" placeholder="Your post title" maxlength="30">
+        <label>Messages</label>
+        <textarea id="message-input" placeholder="Create message for share with your friends." maxlength="300"></textarea>
+        <button id="share-button">SHARE</button>
+    </div>
+    <div class="post-preview">
+        <h2 id="preview-title">Your post title</h2>
+        <p id="preview-message">Create message for share with your friends.</p>
+        <p id="preview-date-author">10:25 am 20/11/23 - Camilo Cifuentes</p>
+    </div>
+</div>
+----------------------------------------
+<!-- Modal de creación exitosa -->
+<div class="modal" id="success-modal">
+    <div class="modal-content">
+        <div class="modal-icon success-icon">✔</div>
+        <h3>Post Created</h3>
+        <button class="modal-btn" id="success-ok">OK</button>
+    </div>
+</div>
+
+<!-- Modal de error -->
+<div class="modal" id="error-modal">
+    <div class="modal-content">
+        <div class="modal-icon error-icon">✖</div>
+        <h3>Uppss Try Later</h3>
+        <button class="modal-btn" id="error-ok">OK</button>
+    </div>
+</div>
+----------------------------------------
+<div class="my-publications">
+    <h2>My Publications</h2>
+
+    <div class="date-select-section">
+        <label for="date-select">Date Select</label>
+        <select id="date-select">
+            <option>Select a date</option>
+            <!-- Otras opciones de fecha aquí -->
+        </select>
+        <p>Showing <span id="shown-posts">2</span>/<span id="total-posts">15</span> Post</p>
+    </div>
+
+    <div class="posts">
+        <!-- Ejemplo de post -->
+        <div class="post">
+            <h3>Your post title</h3>
+            <p>Create message for share with your friends.</p>
+            <p class="post-date">11:25 am 20/11/23 - Camilo Cifuentes</p>
+        </div>
+        <!-- Repite el div .post para más posts -->
+    </div>
+
+    <div class="pagination">
+        <button class="pagination-btn" data-page="1">1</button>
+        <button class="pagination-btn" data-page="2">2</button>
+        <button class="pagination-btn" data-page="3">3</button>
+        <!-- Agrega más botones para más páginas -->
+    </div>
+</div>
+----------------------------------------
+<div class="my-publications">
+    <h2>My Publications</h2>
+
+    <div class="date-select-section">
+        <label for="date-select">Date Select</label>
+        <select id="date-select">
+            <option>Select a date</option>
+            <!-- Otras opciones de fecha aquí -->
+        </select>
+        <p>Showing <span id="shown-posts">2</span>/<span id="total-posts">15</span> Post</p>
+    </div>
+
+    <div class="posts">
+        <!-- Ejemplo de post -->
+        <div class="post">
+            <h3>Your post title</h3>
+            <p>Create message for share with your friends.</p>
+            <p class="post-date">11:25 am 20/11/23 - Camilo Cifuentes</p>
+        </div>
+        <!-- Repite el div .post para más posts -->
+    </div>
+
+    <div class="pagination">
+        <button class="pagination-btn" data-page="1">1</button>
+        <button class="pagination-btn" data-page="2">2</button>
+        <button class="pagination-btn" data-page="3">3</button>
+        <!-- Agrega más botones para más páginas -->
+    </div>
+</div>
+
+----------------------------------------
+<div class="no-results" style="display: none;">
+    <img src="path_to_your_image.png" alt="No results image">
+    <h3>Nothing to see here</h3>
+</div>
+
+<div class="posts">
+    <!-- Los posts se mostrarán aquí -->
+</div>
+----------------------------------------
+<div class="publications">
+    <h2>All Publications</h2>
+
+    <label for="searchInput">Words to Search?</label>
+    <input id="searchInput" type="text" placeholder="post">
+
+    <label for="dateSelect">Date Select</label>
+    <select id="dateSelect">
+        <option>Select a date</option>
+        <!-- Aquí irían las fechas disponibles -->
+    </select>
+
+    <span>Showing <span id="shownPosts">2</span>/<span id="totalPosts">10</span> Post</span>
+
+    <div class="post-card">
+        <h3><span class="highlighted">Your post title</span></h3>
+        <p>Create message for share with your friends.</p>
+        <span>11:25 am 22/11/23 <strong>Daniela Correa</strong></span>
+    </div>
+
+    <!-- Repetir div .post-card según el número de publicaciones -->
+
+    <div class="paginator">
+        << < 1 2 3> >>
+    </div>
+</div>
